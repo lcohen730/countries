@@ -7,10 +7,10 @@
 // FilterDropDown
 // FilterOptions
 // CountryList
+    // CountryListItem
+        // CountryListDetail
 // CountryDetail
-// CountryDetailInfo
+    // CountryDetailInfo
+    // BorderCountryOptions
 // BackButton
-// BorderCountryOptions
-// CountryListItem
-// CountryListDetail
 // Flag
