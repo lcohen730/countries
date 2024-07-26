@@ -1,0 +1,22 @@
+{
+  "name": "countries",
+  "version": "1.0.0",
+  "description": "REST Countries API with color theme switcher coding challenge - Frontend Mentor",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "gulp build && gulp styles",
+    "dev:webpack": "webpack --mode development",
+    "build:webpack": "webpack --mode production",
+    "start": "node server.js",
+    "dev": "gulp",
+    "styles": "gulp styles"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.19.2",
+    "morgan": "^1.10.0"
+  }
+}
