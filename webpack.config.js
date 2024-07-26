@@ -1,4 +1,4 @@
-require('dotenv').config();
+/* require('dotenv').config(); */
 const path = require('path');
 const webpack = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -15,7 +15,8 @@ module.exports = env => {
 		output: {
 			path: path.resolve(__dirname, 'public/js/dist'),
 			filename: '[name].[contenthash].js', // '[name].[contenthash].js' put this if you want to get hashed files to cache bust
-			sourceMapFilename: "[name].[contenthash].js.map"
+			sourceMapFilename: "[name].[contenthash].js.map",
+			publicPath: '/js/dist'
 		},
 		devtool: "source-map",
 		module: {
@@ -34,8 +35,12 @@ module.exports = env => {
 					test: /\.scss$/,
 					use: [
 						'style-loader',
-						MiniCssExtractPlugin.loader,
-						'css-loader',
+						{
+							loader: "css-loader",
+							options: {
+								modules: true,
+							},
+						},
 						'sass-loader',
 						'postcss-loader'
 					]
@@ -46,12 +51,12 @@ module.exports = env => {
 			modules: [
 				'node_modules'
 			],
-			fallback: {
+			/* fallback: {
 				"path": require.resolve("path-browserify"),
-				"os": require.resolve("os-browserify/browser"),
+				"os": require.resolve("os-browserify/browser"), */
 				/* "crypto": require.resolve("crypto-browserify") */
-				"crypto": false
-			}
+				/* "crypto": false */
+			/* } */
 		},
 		plugins: [
 			new MiniCssExtractPlugin({
@@ -67,11 +72,6 @@ module.exports = env => {
 			new CleanWebpackPlugin(),
 			new webpack.ProvidePlugin({
 				'React': 'react',
-			}),
-			new webpack.DefinePlugin({
-				'process.env.EMAILJS_SERVICE_ID': JSON.stringify(process.env.EMAILJS_SERVICE_ID),
-				'process.env.EMAILJS_TEMPLATE_ID': JSON.stringify(process.env.EMAILJS_TEMPLATE_ID),
-				'process.env.EMAILJS_PUBLIC_KEY': JSON.stringify(process.env.EMAILJS_PUBLIC_KEY)
 			})
 		],
 		optimization: {
