@@ -47,7 +47,12 @@ function CountryListItem(_ref) {
   let {
     countryListItem
   } = _ref;
-  return /*#__PURE__*/React.createElement("p", null, countryListItem.name.common);
+  const formattedPop = countryListItem.population.toLocaleString('en-US');
+  return /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("img", {
+    src: countryListItem.flags.svg,
+    alt: countryListItem.name.common,
+    width: 300
+  }), /*#__PURE__*/React.createElement("p", null, countryListItem.name.common), /*#__PURE__*/React.createElement("ul", null, /*#__PURE__*/React.createElement("li", null, "Population: ", formattedPop), /*#__PURE__*/React.createElement("li", null, "Region: ", countryListItem.region), /*#__PURE__*/React.createElement("li", null, "Capital: ", countryListItem.capital)));
 }
 
 /***/ }),
@@ -478,4 +483,4 @@ function _sendRequest() {
 /******/ 	
 /******/ })()
 ;
-//# sourceMappingURL=App.601bcea9417b87d62a5fb8fe0701ab97.js.map
+//# sourceMappingURL=App.3ee548bc25538e0a429efc348e3f97a6.js.map
