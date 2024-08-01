@@ -2,6 +2,9 @@ import styles from './CountryListItem.module.scss';
 
 export default function CountryListItem({ countryListItem }) {
     const formattedPop = countryListItem.population.toLocaleString('en-US');
+    const capitals = Array.isArray(countryListItem.capital) ?
+        countryListItem.capital.join(', ') :
+        countryListItem.capital;
 
     return (
         <div className={styles.country}>
@@ -10,7 +13,7 @@ export default function CountryListItem({ countryListItem }) {
             <ul>
                 <li>Population: {formattedPop}</li>
                 <li>Region: {countryListItem.region}</li>
-                <li>Capital: {countryListItem.capital}</li>
+                <li>Capital: {capitals}</li>
             </ul>
         </div>
     );

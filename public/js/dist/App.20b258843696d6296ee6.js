@@ -54,12 +54,13 @@ function CountryListItem(_ref) {
     countryListItem
   } = _ref;
   const formattedPop = countryListItem.population.toLocaleString('en-US');
+  const capitals = Array.isArray(countryListItem.capital) ? countryListItem.capital.join(', ') : countryListItem.capital;
   return /*#__PURE__*/React.createElement("div", {
     className: _CountryListItem_module_scss__WEBPACK_IMPORTED_MODULE_0__["default"].country
   }, /*#__PURE__*/React.createElement("img", {
     src: countryListItem.flags.svg,
     alt: countryListItem.name.common
-  }), /*#__PURE__*/React.createElement("p", null, countryListItem.name.common), /*#__PURE__*/React.createElement("ul", null, /*#__PURE__*/React.createElement("li", null, "Population: ", formattedPop), /*#__PURE__*/React.createElement("li", null, "Region: ", countryListItem.region), /*#__PURE__*/React.createElement("li", null, "Capital: ", countryListItem.capital)));
+  }), /*#__PURE__*/React.createElement("p", null, countryListItem.name.common), /*#__PURE__*/React.createElement("ul", null, /*#__PURE__*/React.createElement("li", null, "Population: ", formattedPop), /*#__PURE__*/React.createElement("li", null, "Region: ", countryListItem.region), /*#__PURE__*/React.createElement("li", null, "Capital: ", capitals)));
 }
 
 /***/ }),
@@ -673,4 +674,4 @@ var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js
 /******/ 	
 /******/ })()
 ;
-//# sourceMappingURL=App.ed2126499b28c2a6df103a404988963c.js.map
+//# sourceMappingURL=App.d7280218d0c8365a9cf332078b6f7ffb.js.map
