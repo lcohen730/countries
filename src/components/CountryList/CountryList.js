@@ -1,3 +1,4 @@
+import styles from "./CountryList.module.scss";
 import CountryListItem from '../CountryListItem/CountryListItem';
 
 export default function CountryList({ 
@@ -16,7 +17,7 @@ export default function CountryList({
     )
 
     return (
-        <div>
+        <div className={styles.countries}>
             {countries}
         </div>
     );
