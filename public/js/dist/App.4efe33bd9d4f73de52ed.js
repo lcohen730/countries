@@ -341,8 +341,9 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.GGE6wv5Dan5KQk6i_Eob {
 .GGE6wv5Dan5KQk6i_Eob img {
   width: 35vmin;
   height: 20vmin;
-  /* object-fit: cover; */
-}`, "",{"version":3,"sources":["webpack://./src/components/CountryListItem/CountryListItem.module.scss"],"names":[],"mappings":"AAAA;EACI,8BAAA;EACA,aAAA;AACJ;AACI;EACI,aAAA;EACA,cAAA;EACA,uBAAA;AACR","sourcesContent":[".country {\n    background-color: var(--white);\n    margin: 5vmin;\n\n    img {\n        width: 35vmin;\n        height: 20vmin;\n        /* object-fit: cover; */\n    }\n}"],"sourceRoot":""}]);
+  -o-object-fit: cover;
+  object-fit: cover;
+}`, "",{"version":3,"sources":["webpack://./src/components/CountryListItem/CountryListItem.module.scss"],"names":[],"mappings":"AAAA;EACI,8BAAA;EACA,aAAA;AACJ;AACI;EACI,aAAA;EACA,cAAA;EACA,oBAAA;EACG,iBAAA;AACX","sourcesContent":[".country {\n    background-color: var(--white);\n    margin: 5vmin;\n\n    img {\n        width: 35vmin;\n        height: 20vmin;\n        -o-object-fit: cover;\n           object-fit: cover;\n    }\n}"],"sourceRoot":""}]);
 // Exports
 ___CSS_LOADER_EXPORT___.locals = {
 	"country": `GGE6wv5Dan5KQk6i_Eob`
@@ -672,4 +673,4 @@ var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js
 /******/ 	
 /******/ })()
 ;
-//# sourceMappingURL=App.3b9163c232bb2bcd365e6ece44942332.js.map
+//# sourceMappingURL=App.ed2126499b28c2a6df103a404988963c.js.map
