@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Pathway+Gothic+One&display=swap');
 
+:root {
+  --white: hsl(0, 0%, 100%);
+  --very-light-gray: hsl(0, 0%, 98%);
+}
+
 *,
 *:before,
 *:after {
@@ -8,4 +13,5 @@
 
 body {
   font-family: 'Nunito Sans', sans-serif;
+  background-color: var(--very-light-gray);
 }
