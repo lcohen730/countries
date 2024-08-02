@@ -9,12 +9,14 @@ export default function CountryListItem({ countryListItem }) {
     return (
         <div className={styles.country}>
             <img src={countryListItem.flags.svg} alt={countryListItem.name.common} />
-            <p>{countryListItem.name.common}</p>
-            <ul>
-                <li>Population: {formattedPop}</li>
-                <li>Region: {countryListItem.region}</li>
-                <li>Capital: {capitals}</li>
-            </ul>
+            <div className={styles.text}>
+                <p>{countryListItem.name.common}</p>
+                <ul>
+                    <li>Population: {formattedPop}</li>
+                    <li>Region: {countryListItem.region}</li>
+                    <li>Capital: {capitals}</li>
+                </ul>
+            </div>
         </div>
     );
 }

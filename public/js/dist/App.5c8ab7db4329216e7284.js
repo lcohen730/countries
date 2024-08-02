@@ -60,7 +60,9 @@ function CountryListItem(_ref) {
   }, /*#__PURE__*/React.createElement("img", {
     src: countryListItem.flags.svg,
     alt: countryListItem.name.common
-  }), /*#__PURE__*/React.createElement("p", null, countryListItem.name.common), /*#__PURE__*/React.createElement("ul", null, /*#__PURE__*/React.createElement("li", null, "Population: ", formattedPop), /*#__PURE__*/React.createElement("li", null, "Region: ", countryListItem.region), /*#__PURE__*/React.createElement("li", null, "Capital: ", capitals)));
+  }), /*#__PURE__*/React.createElement("div", {
+    className: _CountryListItem_module_scss__WEBPACK_IMPORTED_MODULE_0__["default"].text
+  }, /*#__PURE__*/React.createElement("p", null, countryListItem.name.common), /*#__PURE__*/React.createElement("ul", null, /*#__PURE__*/React.createElement("li", null, "Population: ", formattedPop), /*#__PURE__*/React.createElement("li", null, "Region: ", countryListItem.region), /*#__PURE__*/React.createElement("li", null, "Capital: ", capitals))));
 }
 
 /***/ }),
@@ -344,10 +346,16 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.GGE6wv5Dan5KQk6i_Eob {
   height: 20vmin;
   -o-object-fit: cover;
   object-fit: cover;
-}`, "",{"version":3,"sources":["webpack://./src/components/CountryListItem/CountryListItem.module.scss"],"names":[],"mappings":"AAAA;EACI,8BAAA;EACA,aAAA;AACJ;AACI;EACI,aAAA;EACA,cAAA;EACA,oBAAA;EACG,iBAAA;AACX","sourcesContent":[".country {\n    background-color: var(--white);\n    margin: 5vmin;\n\n    img {\n        width: 35vmin;\n        height: 20vmin;\n        -o-object-fit: cover;\n           object-fit: cover;\n    }\n}"],"sourceRoot":""}]);
+}
+.GGE6wv5Dan5KQk6i_Eob .VAHXwEAhDwewlxbTZAab {
+  /* margin: 3vmin; */
+  font-size: 2vmin;
+  width: 90%;
+}`, "",{"version":3,"sources":["webpack://./src/components/CountryListItem/CountryListItem.module.scss"],"names":[],"mappings":"AAAA;EACI,8BAAA;EACA,aAAA;AACJ;AACI;EACI,aAAA;EACA,cAAA;EACA,oBAAA;EACG,iBAAA;AACX;AAEI;EACI,mBAAA;EACA,gBAAA;EACA,UAAA;AAAR","sourcesContent":[".country {\n    background-color: var(--white);\n    margin: 5vmin;\n\n    img {\n        width: 35vmin;\n        height: 20vmin;\n        -o-object-fit: cover;\n           object-fit: cover;\n    }\n\n    .text {\n        /* margin: 3vmin; */\n        font-size: 2vmin;\n        width: 90%;\n    }\n}"],"sourceRoot":""}]);
 // Exports
 ___CSS_LOADER_EXPORT___.locals = {
-	"country": `GGE6wv5Dan5KQk6i_Eob`
+	"country": `GGE6wv5Dan5KQk6i_Eob`,
+	"text": `VAHXwEAhDwewlxbTZAab`
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -674,4 +682,4 @@ var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js
 /******/ 	
 /******/ })()
 ;
-//# sourceMappingURL=App.d7280218d0c8365a9cf332078b6f7ffb.js.map
+//# sourceMappingURL=App.a78582843f259a738ca0d5c4b035287b.js.map
