@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Routes, Route, useNavigate, Navigate } from 'react-router-dom';
 import DetailPage from '../DetailPage/DetailPage';
 import HomePage from '../HomePage/HomePage';
-/* import Header from '../../components/Header/Header'; */
+import Header from '../../components/Header/Header';
 
 export default function App() {
     const [darkMode, setDarkMode] = useState(false);
@@ -26,7 +26,7 @@ export default function App() {
 
     return (
         <main>
-            {/* <Header handleModeSwitch={handleModeSwitch} /> */}
+            <Header handleModeSwitch={handleModeSwitch} />
             <Routes>
                 <Route path="/" 
                     element={<HomePage 
