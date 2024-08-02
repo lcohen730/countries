@@ -1,0 +1,23 @@
+.searchBar {
+    background-color: var(--white);
+    border: none;
+    margin: 5vmin 5vmin 0;
+    padding: 2vmin 4vmin;
+    width: 30%;
+    box-shadow: 0 0 1vmin 0.5vmin rgba(159, 159, 159, 0.1);
+    display: flex;
+    align-items: center;
+
+    img {
+        width: 3vmin;
+        height: 3vmin;
+        margin-right: 3vmin;
+    }
+    
+    input {
+        border: none;
+        background-color: none;
+        color: var(--dark-gray);
+        width: 100%;
+    }
+}
