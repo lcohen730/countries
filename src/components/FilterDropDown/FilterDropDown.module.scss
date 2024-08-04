@@ -1,0 +1,11 @@
+.dropDown {
+    background-color: var(--white);
+    margin: 5vmin 5vmin 0;
+    box-shadow: 0 0 1vmin 0.5vmin rgba(159, 159, 159, 0.1);
+    padding: 0 4vmin;
+    font-size: 2vmin;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 15%;
+}

@@ -1,7 +1,8 @@
+import styles from './HomePage.module.scss';
 import React, { useState, useEffect } from 'react';
 import SearchBar from '../../components/SearchBar/SearchBar';
-/* import FilterDropDown from '../../components/FilterDropDown/FilterDropDown';
-import FilterOptions from '../../components/FilterOptions/FilterOptions'; */
+import FilterDropDown from '../../components/FilterDropDown/FilterDropDown';
+/* import FilterOptions from '../../components/FilterOptions/FilterOptions'; */
 import CountryList from '../../components/CountryList/CountryList';
 import * as countriesAPI from '../../utilities/countries-api';
 
@@ -22,9 +23,11 @@ export default function HomePage({
 
     return (
         <div>
-            <SearchBar handleSearchCountry={handleSearchCountry} />
-            {/* <FilterDropDown /> */}
-            {/* <FilterOptions handleFilterCountry={handleFilterCountry} /> */}
+            <div className={styles.topRow}>
+                <SearchBar handleSearchCountry={handleSearchCountry} />
+                <FilterDropDown />
+                {/* <FilterOptions handleFilterCountry={handleFilterCountry} /> */}
+            </div>
             <CountryList 
                 countryListItems={countryListItems} 
                 setCountryListItems={setCountryListItems} 
