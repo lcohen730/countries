@@ -42,7 +42,10 @@ export default function App() {
                         handleFilterCountry={handleFilterCountry} 
                     />} 
                 />
-                <Route path="/detail/:countryCode" element={<DetailPage />} />
+                <Route path="/detail/:countryCode" element={<DetailPage 
+                        handleSelectCountry={handleSelectCountry}
+                    />} 
+                />
                 <Route path="*" element={<Navigate to="/" />} />
             </Routes>
         </main>

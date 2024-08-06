@@ -9,3 +9,7 @@ export function getAllCountries() {
 export function getCountryByRegion(region) {
     return sendRequest(`${BASE_URL}/region/${region}`);
 }
+
+export function getCountryByCode(code) {
+    return sendRequest(`${BASE_URL}/alpha/${code}`);
+}
