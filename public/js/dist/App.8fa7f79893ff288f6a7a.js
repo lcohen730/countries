@@ -51,12 +51,14 @@ function CountryList(_ref) {
 
 function CountryListItem(_ref) {
   let {
-    countryListItem
+    countryListItem,
+    handleSelectCountry
   } = _ref;
   const formattedPop = countryListItem.population.toLocaleString('en-US');
   const capitals = Array.isArray(countryListItem.capital) ? countryListItem.capital.join(', ') : countryListItem.capital;
   return /*#__PURE__*/React.createElement("div", {
-    className: _CountryListItem_module_scss__WEBPACK_IMPORTED_MODULE_0__["default"].country
+    className: _CountryListItem_module_scss__WEBPACK_IMPORTED_MODULE_0__["default"].country,
+    onClick: () => handleSelectCountry(countryListItem.cca2)
   }, /*#__PURE__*/React.createElement("img", {
     src: countryListItem.flags.svg,
     alt: countryListItem.name.common
@@ -450,6 +452,7 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.GGE6wv5Dan5KQk6i_Eob {
   margin: 5vmin;
   /* border-radius: 1vmin; */
   box-shadow: 0 0 1vmin 0.5vmin rgba(159, 159, 159, 0.1);
+  cursor: pointer;
 }
 .GGE6wv5Dan5KQk6i_Eob img {
   width: 35vmin;
@@ -461,7 +464,7 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.GGE6wv5Dan5KQk6i_Eob {
   /* margin: 3vmin; */
   font-size: 2vmin;
   width: 90%;
-}`, "",{"version":3,"sources":["webpack://./src/components/CountryListItem/CountryListItem.module.scss"],"names":[],"mappings":"AAAA;EACI,8BAAA;EACA,aAAA;EACA,0BAAA;EACA,sDAAA;AACJ;AACI;EACI,aAAA;EACA,cAAA;EACA,oBAAA;EACG,iBAAA;AACX;AAEI;EACI,mBAAA;EACA,gBAAA;EACA,UAAA;AAAR","sourcesContent":[".country {\n    background-color: var(--white);\n    margin: 5vmin;\n    /* border-radius: 1vmin; */\n    box-shadow: 0 0 1vmin 0.5vmin rgba(159, 159, 159, 0.1);\n\n    img {\n        width: 35vmin;\n        height: 20vmin;\n        -o-object-fit: cover;\n           object-fit: cover;\n    }\n\n    .text {\n        /* margin: 3vmin; */\n        font-size: 2vmin;\n        width: 90%;\n    }\n}"],"sourceRoot":""}]);
+}`, "",{"version":3,"sources":["webpack://./src/components/CountryListItem/CountryListItem.module.scss"],"names":[],"mappings":"AAAA;EACI,8BAAA;EACA,aAAA;EACA,0BAAA;EACA,sDAAA;EACA,eAAA;AACJ;AACI;EACI,aAAA;EACA,cAAA;EACA,oBAAA;EACG,iBAAA;AACX;AAEI;EACI,mBAAA;EACA,gBAAA;EACA,UAAA;AAAR","sourcesContent":[".country {\n    background-color: var(--white);\n    margin: 5vmin;\n    /* border-radius: 1vmin; */\n    box-shadow: 0 0 1vmin 0.5vmin rgba(159, 159, 159, 0.1);\n    cursor: pointer;\n\n    img {\n        width: 35vmin;\n        height: 20vmin;\n        -o-object-fit: cover;\n           object-fit: cover;\n    }\n\n    .text {\n        /* margin: 3vmin; */\n        font-size: 2vmin;\n        width: 90%;\n    }\n}"],"sourceRoot":""}]);
 // Exports
 ___CSS_LOADER_EXPORT___.locals = {
 	"country": `GGE6wv5Dan5KQk6i_Eob`,
@@ -1268,4 +1271,4 @@ var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js
 /******/ 	
 /******/ })()
 ;
-//# sourceMappingURL=App.a2b7f3f2ddf560588a2962dbe9010fb8.js.map
+//# sourceMappingURL=App.e4cd62aead83c0c0ad6db6cb38109f3a.js.map
