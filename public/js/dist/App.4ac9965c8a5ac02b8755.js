@@ -108,6 +108,28 @@ function FilterOptions() {
 
 /***/ }),
 
+/***/ "./src/components/Flag/Flag.js":
+/*!*************************************!*\
+  !*** ./src/components/Flag/Flag.js ***!
+  \*************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ Flag)
+/* harmony export */ });
+/* provided dependency */ var React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+function Flag(_ref) {
+  let {
+    country
+  } = _ref;
+  return /*#__PURE__*/React.createElement("div", null, country && country.flags && country.flags.svg ? /*#__PURE__*/React.createElement("img", {
+    src: country.flags.svg,
+    alt: country.name.common
+  }) : /*#__PURE__*/React.createElement("p", null, "Flag loading..."));
+}
+
+/***/ }),
+
 /***/ "./src/components/Header/Header.js":
 /*!*****************************************!*\
   !*** ./src/components/Header/Header.js ***!
@@ -265,15 +287,16 @@ function App() {
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/dist/index.js");
-/* harmony import */ var _utilities_countries_api__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../utilities/countries-api */ "./src/utilities/countries-api.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/dist/index.js");
+/* harmony import */ var _components_Flag_Flag__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../components/Flag/Flag */ "./src/components/Flag/Flag.js");
+/* harmony import */ var _utilities_countries_api__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../utilities/countries-api */ "./src/utilities/countries-api.js");
 function asyncGeneratorStep(n, t, e, r, o, a, c) { try { var i = n[a](c), u = i.value; } catch (n) { return void e(n); } i.done ? t(u) : Promise.resolve(u).then(r, o); }
 function _asyncToGenerator(n) { return function () { var t = this, e = arguments; return new Promise(function (r, o) { var a = n.apply(t, e); function _next(n) { asyncGeneratorStep(a, r, o, _next, _throw, "next", n); } function _throw(n) { asyncGeneratorStep(a, r, o, _next, _throw, "throw", n); } _next(void 0); }); }; }
 
 
-/* import BackButton from '../../components/BackButton/BackButton';
-import Flag from '../../components/Flag/Flag';
-import CountryDetailInfo from '../../components/CountryDetailInfo/CountryDetailInfo';
+/* import BackButton from '../../components/BackButton/BackButton'; */
+
+/* import CountryDetailInfo from '../../components/CountryDetailInfo/CountryDetailInfo';
 import BorderCountryOptions from '../../components/BorderCountryOptions/BorderCountryOptions'; */
 
 function DetailPage(_ref) {
@@ -281,23 +304,23 @@ function DetailPage(_ref) {
     handleSelectCountry
   } = _ref;
   const [country, setCountry] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)({});
-  const params = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_1__.useParams)();
+  const params = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_2__.useParams)();
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
     function getCountry() {
       return _getCountry.apply(this, arguments);
     }
     function _getCountry() {
       _getCountry = _asyncToGenerator(function* () {
-        const country = yield _utilities_countries_api__WEBPACK_IMPORTED_MODULE_2__.getCountryByCode(params.countryCode);
-        setCountry(country);
+        const data = yield _utilities_countries_api__WEBPACK_IMPORTED_MODULE_3__.getCountryByCode(params.countryCode);
+        setCountry(data[0]);
       });
       return _getCountry.apply(this, arguments);
     }
     getCountry();
   }, [params.countryCode]);
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h1", {
-    onClick: handleClick
-  }, "Test Detail Page"));
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_Flag_Flag__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    country: country
+  }));
 }
 
 /***/ }),
@@ -1290,4 +1313,4 @@ var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js
 /******/ 	
 /******/ })()
 ;
-//# sourceMappingURL=App.f0d35c1e0865c43004a19db2ecb6c856.js.map
+//# sourceMappingURL=App.826eade4e928c3aed7b79d12ad45b7d6.js.map
