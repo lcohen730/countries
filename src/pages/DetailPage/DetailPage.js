@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-/* import BackButton from '../../components/BackButton/BackButton'; */
+import BackButton from '../../components/BackButton/BackButton';
 import Flag from '../../components/Flag/Flag';
 /* import CountryDetailInfo from '../../components/CountryDetailInfo/CountryDetailInfo';
 import BorderCountryOptions from '../../components/BorderCountryOptions/BorderCountryOptions'; */
@@ -20,7 +20,7 @@ export default function DetailPage({ handleSelectCountry }) {
 
     return (
         <div>
-            {/* <BackButton /> */}
+            <BackButton />
             <Flag country={country}/>
             {/* <CountryDetailInfo />
             <BorderCountryOptions /> */}
