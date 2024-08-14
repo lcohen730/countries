@@ -20,6 +20,75 @@ function BackButton() {
 
 /***/ }),
 
+/***/ "./src/components/CountryDetailInfo/CountryDetailInfo.js":
+/*!***************************************************************!*\
+  !*** ./src/components/CountryDetailInfo/CountryDetailInfo.js ***!
+  \***************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ CountryDetailInfo)
+/* harmony export */ });
+/* provided dependency */ var React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+function CountryDetailInfo(_ref) {
+  let {
+    country
+  } = _ref;
+  const nativeNames = function nativeNames() {
+    let names = [];
+    if (country && country.name) {
+      for (let key in country.name.nativeName) {
+        if (country.name.nativeName.hasOwnProperty(key)) {
+          names.push(country.name.nativeName[key].common);
+        }
+      }
+    }
+    return names.join(', ');
+  };
+  const formattedPop = function formattedPop() {
+    if (country && country.population) {
+      return country.population.toLocaleString('en-US');
+    }
+    return '';
+  };
+  const capitals = function capitals() {
+    if (country && country.capital) {
+      return Array.isArray(country.capital) ? country.capital.join(', ') : country.capital;
+    }
+    return '';
+  };
+  const topLevelDomains = function topLevelDomains() {
+    if (country && country.tld) {
+      return country.tld.join(', ');
+    }
+  };
+  const currencies = function currencies() {
+    let currenciesArr = [];
+    if (country && country.currencies) {
+      for (let key in country.currencies) {
+        if (country.currencies.hasOwnProperty(key)) {
+          currenciesArr.push(country.currencies[key].name);
+        }
+      }
+    }
+    return currenciesArr.join(', ');
+  };
+  const languages = function languages() {
+    let languagesArr = [];
+    if (country && country.languages) {
+      for (let key in country.languages) {
+        if (country.languages.hasOwnProperty(key)) {
+          languagesArr.push(country.languages[key]);
+        }
+      }
+    }
+    return languagesArr.join(', ');
+  };
+  return /*#__PURE__*/React.createElement("div", null, country && country.name ? /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("h1", null, country.name.common), /*#__PURE__*/React.createElement("p", null, "Native Name(s): ", nativeNames()), /*#__PURE__*/React.createElement("p", null, "Population: ", formattedPop()), /*#__PURE__*/React.createElement("p", null, "Region: ", country.region), /*#__PURE__*/React.createElement("p", null, "Sub Region: ", country.subregion), /*#__PURE__*/React.createElement("p", null, "Capital(s): ", capitals()), /*#__PURE__*/React.createElement("p", null, "Top Level Domain(s): ", topLevelDomains()), /*#__PURE__*/React.createElement("p", null, "Currencies: ", currencies()), /*#__PURE__*/React.createElement("p", null, "Language(s): ", languages())) : /*#__PURE__*/React.createElement("p", null, "Country info loading..."));
+}
+
+/***/ }),
+
 /***/ "./src/components/CountryList/CountryList.js":
 /*!***************************************************!*\
   !*** ./src/components/CountryList/CountryList.js ***!
@@ -305,32 +374,33 @@ function App() {
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/dist/index.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/dist/index.js");
 /* harmony import */ var _components_BackButton_BackButton__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../components/BackButton/BackButton */ "./src/components/BackButton/BackButton.js");
 /* harmony import */ var _components_Flag_Flag__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../components/Flag/Flag */ "./src/components/Flag/Flag.js");
-/* harmony import */ var _utilities_countries_api__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../utilities/countries-api */ "./src/utilities/countries-api.js");
+/* harmony import */ var _components_CountryDetailInfo_CountryDetailInfo__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../components/CountryDetailInfo/CountryDetailInfo */ "./src/components/CountryDetailInfo/CountryDetailInfo.js");
+/* harmony import */ var _utilities_countries_api__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../utilities/countries-api */ "./src/utilities/countries-api.js");
 function asyncGeneratorStep(n, t, e, r, o, a, c) { try { var i = n[a](c), u = i.value; } catch (n) { return void e(n); } i.done ? t(u) : Promise.resolve(u).then(r, o); }
 function _asyncToGenerator(n) { return function () { var t = this, e = arguments; return new Promise(function (r, o) { var a = n.apply(t, e); function _next(n) { asyncGeneratorStep(a, r, o, _next, _throw, "next", n); } function _throw(n) { asyncGeneratorStep(a, r, o, _next, _throw, "throw", n); } _next(void 0); }); }; }
 
 
 
 
-/* import CountryDetailInfo from '../../components/CountryDetailInfo/CountryDetailInfo';
-import BorderCountryOptions from '../../components/BorderCountryOptions/BorderCountryOptions'; */
+
+/* import BorderCountryOptions from '../../components/BorderCountryOptions/BorderCountryOptions'; */
 
 function DetailPage(_ref) {
   let {
     handleSelectCountry
   } = _ref;
   const [country, setCountry] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)({});
-  const params = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_3__.useParams)();
+  const params = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_4__.useParams)();
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
     function getCountry() {
       return _getCountry.apply(this, arguments);
     }
     function _getCountry() {
       _getCountry = _asyncToGenerator(function* () {
-        const data = yield _utilities_countries_api__WEBPACK_IMPORTED_MODULE_4__.getCountryByCode(params.countryCode);
+        const data = yield _utilities_countries_api__WEBPACK_IMPORTED_MODULE_5__.getCountryByCode(params.countryCode);
         setCountry(data[0]);
       });
       return _getCountry.apply(this, arguments);
@@ -338,6 +408,8 @@ function DetailPage(_ref) {
     getCountry();
   }, [params.countryCode]);
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_BackButton_BackButton__WEBPACK_IMPORTED_MODULE_1__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_Flag_Flag__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    country: country
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_CountryDetailInfo_CountryDetailInfo__WEBPACK_IMPORTED_MODULE_3__["default"], {
     country: country
   }));
 }
@@ -1332,4 +1404,4 @@ var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js
 /******/ 	
 /******/ })()
 ;
-//# sourceMappingURL=App.11cd0126b5d3cbc1d8d1681827509dbc.js.map
+//# sourceMappingURL=App.e9ffb4c3d21fceae8ba60791b9d76549.js.map

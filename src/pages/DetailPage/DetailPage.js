@@ -2,8 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import BackButton from '../../components/BackButton/BackButton';
 import Flag from '../../components/Flag/Flag';
-/* import CountryDetailInfo from '../../components/CountryDetailInfo/CountryDetailInfo';
-import BorderCountryOptions from '../../components/BorderCountryOptions/BorderCountryOptions'; */
+import CountryDetailInfo from '../../components/CountryDetailInfo/CountryDetailInfo';
+/* import BorderCountryOptions from '../../components/BorderCountryOptions/BorderCountryOptions'; */
 import * as countriesAPI from '../../utilities/countries-api';
 
 export default function DetailPage({ handleSelectCountry }) {
@@ -21,9 +21,9 @@ export default function DetailPage({ handleSelectCountry }) {
     return (
         <div>
             <BackButton />
-            <Flag country={country}/>
-            {/* <CountryDetailInfo />
-            <BorderCountryOptions /> */}
+            <Flag country={country} />
+            <CountryDetailInfo country={country} />
+            {/* <BorderCountryOptions /> */}
         </div>
     );
 }
